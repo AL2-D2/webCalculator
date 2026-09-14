@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,50 @@
     <link href="style.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <div id="calculator-container">
         <div id="result-screen"></div>
         <div id="buttons-container">
-            <div id="special-btn">
-            <button type="button" id="delete-btn" name="delete" class="light-gray"></button>
-            <button type="button" id="clear-btn" name="clear" class="light-gray"></button>
-            <button type="button" id="percentage-btn" name="percentage" class="light-gray"></button>            
+
+
+            <div id="left-container">
+                <div id="row">
+                    <button type="button" id="delete-btn" name="delete" class="light-gray">delete</button>
+                    <button type="button" id="clear-btn" name="clear" class="light-gray">clear</button>
+                    <button type="button" id="percentage-btn" name="percentage" class="light-gray">percentage</button>
+                </div>
+                <div id="row">
+                    <button type="button" id="seven-btn" name="seven" class="gray">7</button>
+                    <button type="button" id="eight-btn" name="eight" class="gray">8</button>
+                    <button type="button" id="nine-btn" name="nine" class="gray">9</button>
+                </div>
+                <div id="row">
+                    <button type="button" id="four-btn" name="four" class="gray">4</button>
+                    <button type="button" id="five-btn" name="five" class="gray">5</button>
+                    <button type="button" id="six-btn" name="six" class="gray">6</button>
+                </div>
+                <div id="row">
+                    <button type="button" id="one-btn" name="one" class="gray">1</button>
+                    <button type="button" id="two-btn" name="two" class="gray">2</button>
+                    <button type="button" id="three-btn" name="three" class="gray">3</button>
+                </div>
+                <div id="row">
+                    <button type="button" id="add-btn" name="add" class="gray">0</button>
+                    <button type="button" id="dot-btn" name="dot" class="gray">dot</button>
+                </div>
+
             </div>
-            <div id="operator-btn">
-                <button type="button" id="divide-btn" name="divide" class="orange"></button>
-                <button type="button" id="multiply-btn" name="multiply" class="orange"></button>
-                <button type="button" id="subtract-btn" name="subtract" class="orange"></button>
-                <button type="button" id="add-btn" name="add" class="orange"></button>
-            </div>
-            <div id="num-btn">
-                <button type="button" id="seven-btn" name="seven" class="gray">7</button>
-                <button type="button" id="eight-btn" name="eight" class="gray">8</button>
-                <button type="button" id="nine-btn" name="nine" class="gray">9</button>
-                <button type="button" id="four-btn" name="four" class="gray">4</button>
-                <button type="button" id="five-btn" name="five" class="gray">5</button>
-                <button type="button" id="six-btn" name="six" class="gray">6</button>
-                <button type="button" id="one-btn" name="one" class="gray">1</button>
-                <button type="button" id="two-btn" name="two" class="gray">2</button>
-                <button type="button" id="three-btn" name="three" class="gray">3</button>                
-                <button type="button" id="add-btn" name="add" class="gray">0</button>
-                <button type="button" id="dot-btn" name="dot" class="gray"></button>
+            <div id="right-container">
+                <button type="button" id="divide-btn" name="divide" class="orange">divide</button>
+                <button type="button" id="multiply-btn" name="multiply" class="orange">multiply</button>
+                <button type="button" id="subtract-btn" name="subtract" class="orange">subtract</button>
+                <button type="button" id="add-btn" name="add" class="orange">add</button>
+                <button type="button" id="result-btn" name="result" class="orange">result</button>
             </div>
         </div>
+
     </div>
 </body>
+
 </html>

@@ -28,5 +28,19 @@ body{
     background-color: #8b6c6c;
     width: 80%;
     height: 75%;    
-    justify-self: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#right-container{    
+    display:flex;
+    flex-direction: column;
+    border: 1px solid red;
+    width: 23%;
+}
+#left-container{    
+    display:flex;
+    flex-direction: column;    
+    border: 1px solid red;
+    width: 73%;
 }
