@@ -14,4 +14,19 @@ body{
     background-color: pink;
     height: 55vh;
     width: 30%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#result-screen{
+    background-color: #fff;
+    width: 80%;
+    height: 15%;
+}
+#buttons-container{
+    background-color: #8b6c6c;
+    width: 80%;
+    height: 75%;    
+    justify-self: center;
 }
