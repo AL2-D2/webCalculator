@@ -1,0 +1,17 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+}
+#calculator-container{
+    background-color: pink;
+    height: 55vh;
+    width: 30%;
+}
