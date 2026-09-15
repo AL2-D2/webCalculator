@@ -45,7 +45,7 @@ clearButton.addEventListener("click", () => {
     resultScreenNumber.classList.add("reset");
 });
 
-//stores the current element on the firstNumber and adds reset class because after the another button is pushed it is going to be reset
+
 addButton.addEventListener("click", () =>  {
     /* if first number is a valid number and does not have reset class (which indicates that currently the operator button is not pressed which
      prevents to assign current value to be second because it is already and must be the first value...) */
@@ -62,6 +62,8 @@ addButton.addEventListener("click", () =>  {
         resultScreenNumber.classList.add("reset");
     }
     else{
+    /*stores the current element on the firstNumber and adds reset class because after the another 
+    numerical button is pushed it is going reset the currentScreenValue to the intended number.*/
     firstNumber = Number(resultScreenNumber.innerText);
     resultScreenNumber.classList.add("reset");    
     }
