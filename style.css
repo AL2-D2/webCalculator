@@ -34,13 +34,16 @@ body{
 }
 #right-container{    
     display:flex;
-    flex-direction: column;
-    border: 1px solid red;
+    flex-direction: column;    
     width: 23%;
+    justify-content: center;
+    align-items:center;
 }
 #left-container{    
     display:flex;
     flex-direction: column;    
     border: 1px solid red;
     width: 73%;
+    justify-content: center;
+    align-items:center;
 }
