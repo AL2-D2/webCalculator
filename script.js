@@ -83,6 +83,10 @@ deleteButton.addEventListener("click", () => {
 clearButton.addEventListener("click", () => {
     resultScreenNumber.innerText = 0
     resultScreenNumber.classList.add("reset");
+    //reset of values.
+    firstNumber = null;
+    secondNumber = null;
+    result = null;
 });
 
 addButton.addEventListener("click", (e) => eventOperator(e));
