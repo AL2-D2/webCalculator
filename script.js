@@ -48,6 +48,8 @@ const clearButton = document.querySelector("#clear-btn");
 
 const addButton = document.querySelector("#add-btn");
 const subtractButton = document.querySelector("#subtract-btn");
+const multiplyButton = document.querySelector("#multiply-btn");
+const divideButton = document.querySelector("#divide-btn");
 const resultButton = document.querySelector("#result-btn");
 //these numbers are stored for to be used later in the result button. they will be the arguments of the mathematical operation methods.
 let firstNumber = null;
@@ -85,3 +87,5 @@ clearButton.addEventListener("click", () => {
 
 addButton.addEventListener("click", (e) => eventOperator(e));
 subtractButton.addEventListener("click", (e) => eventOperator(e));
+multiplyButton.addEventListener("click", (e) => eventOperator(e));
+divideButton.addEventListener("click", (e) => eventOperator(e));
