@@ -15,8 +15,10 @@ numericalButtons.forEach((numericalButton) => numericalButton.addEventListener("
     }
     resultScreenNumber.innerText += numericalButton.innerText;
 }));
-// deleteButton.addEventListener("click", () => resultScreenNumber.innerText.substring(0, resultScreenNumber.innerText.length - 1));
+
+//delete the last digit on the number when clicked on the delete button.
 deleteButton.addEventListener("click", () => {
+    //if its the only number on the screen make it 0 when clicked on the delete button.
     if(resultScreenNumber.innerText.length === 1){
         resultScreenNumber.innerText = 0;
     }
