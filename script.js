@@ -122,7 +122,6 @@ divideButton.addEventListener("click", (e) => {
 //we give lastOperator as an argument because resultButton must operate in according to last selected operator.
 resultButton.addEventListener("click", () => eventOperator(lastOperator));
 
-
 percentageButton.addEventListener("click", () => {
     firstNumber = resultScreenNumber.innerText;
     resultScreenNumber.innerText = round(firstNumber / 100, 6);
