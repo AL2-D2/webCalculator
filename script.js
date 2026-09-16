@@ -20,7 +20,10 @@ function operate(e, firstNumber, secondNumber) {
     }
 }
 
-function eventOperator(e) {
+function eventOperator(e) {    
+    /* if first number is a valid number and does not have reset class (which indicates that currently any of the operator button is not pressed which
+     prevents to assign current value to be second because it is already assigned and must be the first value...). So it does the operation
+     whether result button pressed or not*/
     if (firstNumber != null && !resultScreenNumber.classList.contains("reset")) {
         //must be converted to a number because operation functions take two number element as arguments.
         secondNumber = Number(resultScreenNumber.innerText);
@@ -34,8 +37,8 @@ function eventOperator(e) {
         resultScreenNumber.classList.add("reset");
     }
     else {
-        /*stores the current element on the firstNumber and adds reset class because after the another 
-        numerical button is pushed it is going reset the currentScreenValue to the intended number.*/
+        /*if first number is not already assigned it is going to assign current value on the screen and adds reset class to write another 
+        value later by user.*/
         firstNumber = Number(resultScreenNumber.innerText);
         resultScreenNumber.classList.add("reset");
     }
@@ -55,6 +58,8 @@ const resultButton = document.querySelector("#result-btn");
 let firstNumber = null;
 let secondNumber = null;
 let result = null;
+//this is for the result button bc when clicked it must know which is the last operator and operate according to this information.
+let lastOperator = null;
 
 numericalButtons.forEach((numericalButton) => numericalButton.addEventListener("click", () => {
     // if result number has a 'reset' class make it disappear with the selected number...
@@ -67,6 +72,7 @@ numericalButtons.forEach((numericalButton) => numericalButton.addEventListener("
 
 }));
 
+//TODO: when pressed delete button it should make the stored value change so the calculation based on the last updated values.
 //delete the last digit on the number when clicked on the delete button.
 deleteButton.addEventListener("click", () => {
     //if its the only number on the screen make it 0 when clicked on the delete button.
@@ -75,7 +81,7 @@ deleteButton.addEventListener("click", () => {
         resultScreenNumber.classList.add("reset");
     }
     else {
-        resultScreenNumber.innerText = resultScreenNumber.innerText.substring(0, resultScreenNumber.innerText.length - 1);
+        resultScreenNumber.innerText = resultScreenNumber.innerText.substring(0, resultScreenNumber.innerText.length - 1);        
     }
 });
 
@@ -89,7 +95,21 @@ clearButton.addEventListener("click", () => {
     result = null;
 });
 
-addButton.addEventListener("click", (e) => eventOperator(e));
-subtractButton.addEventListener("click", (e) => eventOperator(e));
-multiplyButton.addEventListener("click", (e) => eventOperator(e));
-divideButton.addEventListener("click", (e) => eventOperator(e));
+addButton.addEventListener("click", (e) => {
+    eventOperator(e);
+    lastOperator = e;
+});
+subtractButton.addEventListener("click", (e) => {
+    eventOperator(e);
+    lastOperator = e;
+});
+multiplyButton.addEventListener("click", (e) => {
+    eventOperator(e);
+    lastOperator = e;
+});
+divideButton.addEventListener("click", (e) => {
+    eventOperator(e);
+    lastOperator = e;
+}); 
+//we give lastOperator as an argument because resultButton must operate in according to last selected operator.
+resultButton.addEventListener("click", () => eventOperator(lastOperator))
