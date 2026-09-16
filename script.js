@@ -128,7 +128,7 @@ percentageButton.addEventListener("click", () => {
 })
 
 dotButton.addEventListener("click", () => {
-    if(!resultScreenNumber.innerText.includes(".")){
-    resultScreenNumber.innerText += ".";
+    if (!resultScreenNumber.innerText.includes(".")) {
+        resultScreenNumber.innerText += ".";
     }
 })
