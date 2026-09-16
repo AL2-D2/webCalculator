@@ -47,3 +47,8 @@ body{
     justify-content: center;
     align-items:center;
 }
+.btn{    
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
