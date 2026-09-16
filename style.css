@@ -31,20 +31,19 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid red;
+
 }
 
 #result-screen {
-    width: 65%;
+    width: 35%;
     height: 15%;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    border: 1px solid red;
 }
 
 #buttons-container {
-    width: 80%;
+    width: 40%;
     height: 75%;
     display: flex;
     flex-direction: row;
@@ -57,7 +56,6 @@ body {
     width: 23%;
     justify-content: center;
     align-items: flex-start;
-    border: 1px solid red;
 }
 
 #left-container {
@@ -66,7 +64,6 @@ body {
     width: 73%;
     justify-content: center;
     align-items: flex-end;
-    border: 1px solid red;
 }
 
 .btn {
@@ -149,26 +146,35 @@ body {
     font-weight: bold;
 }
 
-@media (max-width: 673px) {
+@media (max-width: 1350px) {
     #calculator-container {
         min-width: 80%;
     }
 }
 
-@media (max-width: 506px) {
+@media (max-width: 1012px) {
     #calculator-container {
         min-width: 100%;
     }
 }
 
-@media (max-width: 404px) {
+@media (max-width: 810px) {
+    #buttons-container {
+        width: 60%;
+    }
+
+    #result-screen {
+        width: 45%;
+
+    }
+
     .btn {
         width: 60px;
         height: 60px;
     }
 
     #input-number {
-        font-size: 35px;
+        font-size: 45px;
     }
 
     #result-screen {
@@ -182,18 +188,75 @@ body {
     }
 }
 
-@media (max-width: 327px) {
-    .btn {
-        width: 40px;
-        height: 40px;
-    }
-
-    #input-number {
-        font-size: 25px;
+@media (max-width: 656px) {
+    #buttons-container {
+        width: 80%;
     }
 
     #result-screen {
-        margin-top: 150px;
+        width: 60%;
+
+    }
+
+    .btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    #input-number {
+        font-size: 45px;
+    }
+
+    .double-sized {
+        width: 82px;
+        height: 40px;
+        border-radius: 50px;
+    }
+}
+
+@media (max-width: 451px) {
+    #buttons-container {
+        width: 80%;
+    }
+
+    #result-screen {
+        width: 60%;
+
+    }
+
+    .btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    #input-number {
+        font-size: 35px;
+    }
+
+    .double-sized {
+        width: 82px;
+        height: 40px;
+        border-radius: 50px;
+    }
+}
+
+@media (max-width: 302px) {
+    #buttons-container {
+        width: 100%;
+    }
+
+    #result-screen {
+        width: 80%;
+
+    }
+
+    .btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    #input-number {
+        font-size: 35px;
     }
 
     .double-sized {
