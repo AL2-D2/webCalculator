@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 :root{
+    --button-fore-color: #ebebeb;
     --light-gray: #a8a7a7;
     --gray: #555555;
     --orange: orange;
@@ -19,7 +20,6 @@ body {
 }
 
 #calculator-container {
-    background-color: pink;
     height: 55vh;
     width: 30%;
     display: flex;
@@ -28,14 +28,15 @@ body {
     align-items: center;
 }
 
-#result-screen {
-    background-color: #fff;
+#result-screen {    
     width: 80%;
     height: 15%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
-#buttons-container {
-    background-color: #8b6c6c;
+#buttons-container {    
     width: 80%;
     height: 75%;    
     display: flex;
@@ -65,7 +66,7 @@ body {
     border-radius: 50%;
     border: none;
     margin-bottom: 2px;
-    color: white;
+    color: var(--button-fore-color);
 }
 
 .light-gray{
@@ -78,4 +79,10 @@ body {
 
 .orange{
     background-color: var(--orange);
+}
+
+#input-number{
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
 }
