@@ -145,7 +145,12 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
-
+i{
+    pointer-events: none;
+}
+span{
+    pointer-events: none;
+}
 @media (max-width: 1350px) {
     #calculator-container {
         min-width: 80%;
