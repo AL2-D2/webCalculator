@@ -4,6 +4,12 @@ const multiply = (firstNum, secondNum) => firstNum * secondNum;
 const divide = (firstNum, secondNum) => firstNum / secondNum;
 const decimal = (number) => Math.floor(number / 100);
 
+function round(num, decimalPlaces = 0) {
+    var p = Math.pow(10, decimalPlaces);
+    var n = (num * p) * (1 + Number.EPSILON);
+    return Math.round(n) / p;
+}
+
 function operate(e, firstNumber, secondNumber) {
     //checking what operator is pressed and make calculations based on this check.
     if (e.target.classList.contains("add-btn")) {
@@ -29,7 +35,7 @@ function eventOperator(e) {
         secondNumber = Number(resultScreenNumber.innerText);
         //sending e because we can check what operator is in operate function.        
         result = operate(e, firstNumber, secondNumber);
-        resultScreenNumber.innerText = result;
+        resultScreenNumber.innerText = round(result, 2);
         //assigning firstNumber as the current result because it should continue to operate if another operation is desired from the user.
         firstNumber = result;
         //second number should be reset for future operations from the user.
@@ -56,6 +62,7 @@ const divideButton = document.querySelector("#divide-btn");
 const resultButton = document.querySelector("#result-btn");
 
 const percentageButton = document.querySelector("#percentage-btn");
+const dotButton = document.querySelector("#dot-btn");
 //these numbers are stored for to be used later in the result button. they will be the arguments of the mathematical operation methods.
 let firstNumber = null;
 let secondNumber = null;
@@ -71,7 +78,6 @@ numericalButtons.forEach((numericalButton) => numericalButton.addEventListener("
     }
 
     resultScreenNumber.innerText += numericalButton.innerText;
-
 }));
 
 //TODO: when pressed delete button it should make the stored value change so the calculation based on the last updated values.
@@ -116,13 +122,14 @@ divideButton.addEventListener("click", (e) => {
 //we give lastOperator as an argument because resultButton must operate in according to last selected operator.
 resultButton.addEventListener("click", () => eventOperator(lastOperator));
 
-function round(num, decimalPlaces = 0) {
-    var p = Math.pow(10, decimalPlaces);
-    var n = (num * p) * (1 + Number.EPSILON);
-    return Math.round(n) / p;
-}
 
 percentageButton.addEventListener("click", () => {
     firstNumber = resultScreenNumber.innerText;
     resultScreenNumber.innerText = round(firstNumber / 100, 6);
+})
+
+dotButton.addEventListener("click", () => {
+    if(!resultScreenNumber.innerText.includes(".")){
+    resultScreenNumber.innerText += ".";
+    }
 })
