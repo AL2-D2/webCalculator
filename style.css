@@ -5,12 +5,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --button-fore-color: #ebebeb;
     --light-gray: #a8a7a7;
     --gray: #555555;
     --orange: orange;
 }
+
 body {
     background-color: black;
     display: flex;
@@ -28,7 +30,7 @@ body {
     align-items: center;
 }
 
-#result-screen {    
+#result-screen {
     width: 80%;
     height: 15%;
     display: flex;
@@ -36,9 +38,9 @@ body {
     justify-content: flex-end;
 }
 
-#buttons-container {    
+#buttons-container {
     width: 80%;
-    height: 75%;    
+    height: 75%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -54,7 +56,7 @@ body {
 
 #left-container {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     width: 73%;
     justify-content: center;
     align-items: center;
@@ -67,22 +69,40 @@ body {
     border: none;
     margin-bottom: 2px;
     color: var(--button-fore-color);
+    font-weight: 600;
 }
 
-.light-gray{
+.light-gray {
     background-color: var(--light-gray);
 }
 
-.gray{
+.gray {
     background-color: var(--gray);
 }
 
-.orange{
+.orange {
     background-color: var(--orange);
 }
 
-#input-number{
+#input-number {
     font-size: 50px;
     font-weight: 700;
     color: white;
+}
+
+.double-sized{
+    width: 150px;
+    height: 70px;    
+    border-radius: 50px;
+}
+
+.align-left{
+    display:flex;    
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+
+.btn{
+    font-size: 20px;
+    font-weight: bold;
 }
