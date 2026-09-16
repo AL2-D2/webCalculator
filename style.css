@@ -8,9 +8,12 @@
 
 :root {
     --button-fore-color: #ebebeb;
-    --light-gray: #a8a7a7;
-    --gray: #555555;
+    --light-gray: #bbbbbb;
+    --dark-gray: #303030;
     --orange: orange;
+    --number-hover-color: rgba(217, 217, 217, 0.457);
+    --misc-hover-color: rgba(197, 197, 197, 0.682);    
+    --operator-hover-color: rgb(255, 183, 39);
 }
 
 body {
@@ -76,8 +79,8 @@ body {
     background-color: var(--light-gray);
 }
 
-.gray {
-    background-color: var(--gray);
+.dark-gray {
+    background-color: var(--dark-gray);
 }
 
 .orange {
@@ -90,19 +93,41 @@ body {
     color: white;
 }
 
-.double-sized{
+.double-sized {
     width: 150px;
-    height: 70px;    
+    height: 70px;
     border-radius: 50px;
 }
 
-.align-left{
-    display:flex;    
+.align-left {
+    display: flex;
     justify-content: flex-start;
     margin-left: 30px;
 }
 
-.btn{
+.btn {
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.125s ease;
+}
+.btn.numerical-btn:hover, #dot-btn:hover{
+    background-color: var(--number-hover-color);
+}
+.btn.numerical-btn:active, #dot-btn:active{
+    background-color: rgba(188, 187, 187, 0.89);
+}
+
+.btn.misc-btn:hover{
+    background-color: var(--misc-hover-color);
+}
+.btn.misc-btn:active{
+    background-color: rgba(255, 255, 255, 0.82);
+}
+
+.btn.operator-btn:hover{
+    background-color: var(--operator-hover-color);
+}
+.btn.operator-btn:active{
+    background-color: rgb(255, 191, 63);
 }
