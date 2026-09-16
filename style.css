@@ -1,54 +1,81 @@
-*,*::after,*::before{
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+:root{
+    --light-gray: #a8a7a7;
+    --gray: #555555;
+    --orange: orange;
+}
+body {
     background-color: black;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     justify-content: center;
     height: 100vh;
 }
-#calculator-container{
+
+#calculator-container {
     background-color: pink;
     height: 55vh;
     width: 30%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-#result-screen{
+
+#result-screen {
     background-color: #fff;
     width: 80%;
     height: 15%;
 }
-#buttons-container{
+
+#buttons-container {
     background-color: #8b6c6c;
     width: 80%;
     height: 75%;    
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-#right-container{    
-    display:flex;
-    flex-direction: column;    
+
+#right-container {
+    display: flex;
+    flex-direction: column;
     width: 23%;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
-#left-container{    
-    display:flex;
+
+#left-container {
+    display: flex;
     flex-direction: column;    
-    border: 1px solid red;
     width: 73%;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
-.btn{    
+
+.btn {
     width: 75px;
     height: 75px;
     border-radius: 50%;
+    border: none;
+    margin-bottom: 2px;
+    color: white;
+}
+
+.light-gray{
+    background-color: var(--light-gray);
+}
+
+.gray{
+    background-color: var(--gray);
+}
+
+.orange{
+    background-color: var(--orange);
 }
