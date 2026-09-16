@@ -7,19 +7,21 @@
     <title>Calculator</title>
     <link href="style.css" rel="stylesheet">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
     <div id="calculator-container">
         <div id="result-screen"><span id="input-number" class="reset">0</span></div>
         <div id="buttons-container">
-
-
             <div id="left-container">
                 <div id="row">
-                    <button type="button" id="delete-btn" name="delete" class="delete-btn light-gray btn misc-btn">delete</button>
-                    <button type="button" id="clear-btn" name="clear" class="clear-btn light-gray btn misc-btn">clear</button>
-                    <button type="button" id="percentage-btn" name="percentage" class="percentage-btn light-gray btn misc-btn">percentage</button>
+                    <button type="button" id="delete-btn" name="delete" class="delete-btn light-gray btn misc-btn"><i
+                            class="bi bi-backspace"></i></button>
+                    <button type="button" id="clear-btn" name="clear"
+                        class="clear-btn light-gray btn misc-btn">CE</button>
+                    <button type="button" id="percentage-btn" name="percentage"
+                        class="percentage-btn light-gray btn misc-btn"><i class="bi bi-percent"></i></button>
                 </div>
                 <div id="row">
                     <button type="button" id="seven-btn" name="seven" class="dark-gray numerical-btn btn">7</button>
@@ -37,17 +39,23 @@
                     <button type="button" id="three-btn" name="three" class="dark-gray numerical-btn btn">3</button>
                 </div>
                 <div id="row">
-                    <button type="button" id="zero-btn" name="zero" class="dark-gray numerical-btn btn double-sized"><span class="align-left">0</span></button>
+                    <button type="button" id="zero-btn" name="zero"
+                        class="dark-gray numerical-btn btn double-sized"><span class="align-left">0</span></button>
                     <button type="button" id="dot-btn" name="dot" class="dark-gray btn">dot</button>
                 </div>
 
             </div>
             <div id="right-container">
-                <button type="button" id="divide-btn" name="divide" class="orange operator-btn divide-btn btn">divide</button>
-                <button type="button" id="multiply-btn" name="multiply" class="orange operator-btn multiply-btn btn">multiply</button>
-                <button type="button" id="subtract-btn" name="subtract" class="orange operator-btn subtract-btn btn">subtract</button>
-                <button type="button" id="add-btn" name="add" class="orange operator-btn add-btn btn">add</button>
-                <button type="button" id="result-btn" name="result" class="orange operator-btn result-btn btn">result</button>
+                <button type="button" id="divide-btn" name="divide" class="orange operator-btn divide-btn btn"><span
+                        style="font-size:37px; font-weight:lighter">&#xF7;</span></button>
+                <button type="button" id="multiply-btn" name="multiply" class="orange operator-btn multiply-btn btn"><i
+                        class="bigger bi bi-x"></i></button>
+                <button type="button" id="subtract-btn" name="subtract" class="orange operator-btn subtract-btn btn"><i
+                        class="bigger bi bi-dash"></i></button>
+                <button type="button" id="add-btn" name="add" class="orange operator-btn add-btn btn"><i
+                        class="bi bi-plus-lg"></i></button>
+                <button type="button" id="result-btn" name="result" class="orange operator-btn result-btn btn"><span
+                        class="bigger">&#61;</span></button>
             </div>
         </div>
 

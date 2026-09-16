@@ -34,7 +34,7 @@ body {
 }
 
 #result-screen {
-    width: 80%;
+    width: 65%;
     height: 15%;
     display: flex;
     align-items: flex-end;
@@ -54,7 +54,7 @@ body {
     flex-direction: column;
     width: 23%;
     justify-content: center;
-    align-items: flex-start;      
+    align-items: flex-start;
 }
 
 #left-container {
@@ -66,8 +66,8 @@ body {
 }
 
 .btn {
-    width: 75px;
-    height: 75px;
+    min-width: 75px;
+    min-height: 75px;
     border-radius: 50%;
     border: none;
     margin-bottom: 2px;
@@ -136,4 +136,14 @@ body {
 
 .btn.operator-btn:active {
     background-color: rgb(255, 191, 63);
+}
+
+.bigger {
+    font-size: 37px;
+    font-weight: lighter;
+}
+
+.bi-plus-lg {
+    font-size: 30px;
+    font-weight: bold;
 }
