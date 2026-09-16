@@ -25,12 +25,13 @@ body {
 }
 
 #calculator-container {
-    height: 55vh;
-    width: 30%;
+    min-height: 55vh;
+    min-width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid red;
 }
 
 #result-screen {
@@ -39,6 +40,7 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    border: 1px solid red;
 }
 
 #buttons-container {
@@ -55,6 +57,7 @@ body {
     width: 23%;
     justify-content: center;
     align-items: flex-start;
+    border: 1px solid red;
 }
 
 #left-container {
@@ -63,16 +66,21 @@ body {
     width: 73%;
     justify-content: center;
     align-items: flex-end;
+    border: 1px solid red;
 }
 
 .btn {
-    min-width: 75px;
-    min-height: 75px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     border: none;
     margin-bottom: 2px;
     color: var(--button-fore-color);
     font-weight: 600;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.125s ease;
 }
 
 .light-gray {
@@ -103,13 +111,6 @@ body {
     display: flex;
     justify-content: flex-start;
     margin-left: 30px;
-}
-
-.btn {
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.125s ease;
 }
 
 .btn.numerical-btn:hover,
@@ -146,4 +147,58 @@ body {
 .bi-plus-lg {
     font-size: 30px;
     font-weight: bold;
+}
+
+@media (max-width: 673px) {
+    #calculator-container {
+        min-width: 80%;
+    }
+}
+
+@media (max-width: 506px) {
+    #calculator-container {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 404px) {
+    .btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    #input-number {
+        font-size: 35px;
+    }
+
+    #result-screen {
+        margin-top: 65px;
+    }
+
+    .double-sized {
+        width: 122px;
+        height: 60px;
+        border-radius: 50px;
+    }
+}
+
+@media (max-width: 327px) {
+    .btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    #input-number {
+        font-size: 25px;
+    }
+
+    #result-screen {
+        margin-top: 150px;
+    }
+
+    .double-sized {
+        width: 82px;
+        height: 40px;
+        border-radius: 50px;
+    }
 }
