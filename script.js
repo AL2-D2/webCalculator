@@ -20,7 +20,7 @@ function operate(e, firstNumber, secondNumber) {
     }
 }
 
-function eventOperator(e) {    
+function eventOperator(e) {
     /* if first number is a valid number and does not have reset class (which indicates that currently any of the operator button is not pressed which
      prevents to assign current value to be second because it is already assigned and must be the first value...). So it does the operation
      whether result button pressed or not*/
@@ -54,6 +54,8 @@ const subtractButton = document.querySelector("#subtract-btn");
 const multiplyButton = document.querySelector("#multiply-btn");
 const divideButton = document.querySelector("#divide-btn");
 const resultButton = document.querySelector("#result-btn");
+
+const percentageButton = document.querySelector("#percentage-btn");
 //these numbers are stored for to be used later in the result button. they will be the arguments of the mathematical operation methods.
 let firstNumber = null;
 let secondNumber = null;
@@ -81,7 +83,7 @@ deleteButton.addEventListener("click", () => {
         resultScreenNumber.classList.add("reset");
     }
     else {
-        resultScreenNumber.innerText = resultScreenNumber.innerText.substring(0, resultScreenNumber.innerText.length - 1);        
+        resultScreenNumber.innerText = resultScreenNumber.innerText.substring(0, resultScreenNumber.innerText.length - 1);
     }
 });
 
@@ -110,6 +112,17 @@ multiplyButton.addEventListener("click", (e) => {
 divideButton.addEventListener("click", (e) => {
     eventOperator(e);
     lastOperator = e;
-}); 
+});
 //we give lastOperator as an argument because resultButton must operate in according to last selected operator.
-resultButton.addEventListener("click", () => eventOperator(lastOperator))
+resultButton.addEventListener("click", () => eventOperator(lastOperator));
+
+function round(num, decimalPlaces = 0) {
+    var p = Math.pow(10, decimalPlaces);
+    var n = (num * p) * (1 + Number.EPSILON);
+    return Math.round(n) / p;
+}
+
+percentageButton.addEventListener("click", () => {
+    firstNumber = resultScreenNumber.innerText;
+    resultScreenNumber.innerText = round(firstNumber / 100, 6);
+})
