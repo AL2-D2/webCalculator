@@ -94,7 +94,6 @@ body {
     font-size: 50px;
     font-weight: 700;
     color: white;
-    width: 75px;
     display: flex;
     justify-content: center;
     border-radius: 50%;
@@ -102,7 +101,6 @@ body {
 
 .double-sized {
     width: 150px;
-    height: 70px;
     border-radius: 50px;
 }
 
@@ -112,18 +110,14 @@ body {
     margin-left: 30px;
 }
 
-
-
 .btn.numerical-btn:active,
 #dot-btn:active {
     background-color: rgba(188, 187, 187, 0.89);
 }
 
-
 .btn.misc-btn:active {
     background-color: rgba(255, 255, 255, 0.82);
 }
-
 
 .btn.operator-btn:active {
     background-color: rgb(255, 191, 63);
@@ -150,5 +144,47 @@ span {
 
     .btn.operator-btn:hover {
         background-color: var(--operator-hover-color);
+    }
+}
+
+@media (max-width: 311px) {
+    .btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    #input-number {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .double-sized {
+        width: 120px;
+        border-radius: 50px;
+    }
+
+    .alignment {
+        width: 55px;
+    }
+}
+
+@media (max-width: 237px) {
+    .btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    #input-number {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .double-sized {
+        width: 75px;
+        border-radius: 50px;
+    }
+
+    .alignment {
+        width: 35px;
     }
 }
