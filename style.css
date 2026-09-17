@@ -24,46 +24,44 @@ body {
     height: 100vh;
 }
 
-#calculator-container {
-    min-height: 55vh;
-    min-width: 60%;
+.container {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    min-height: auto;
+    min-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
 }
 
 #result-screen {
-    width: 35%;
-    height: 15%;
+    width: 100%;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.alignment {
+    height: 10px;
+    width: 75px;
+    border-radius: 50%;
 }
 
 #buttons-container {
-    width: 40%;
-    height: 75%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-#right-container {
     display: flex;
     flex-direction: column;
-    width: 23%;
+    width: 100%;
+    height: auto;
     justify-content: center;
-    align-items: flex-start;
-}
-
-#left-container {
-    display: flex;
-    flex-direction: column;
-    width: 73%;
-    justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .btn {
@@ -96,6 +94,10 @@ body {
     font-size: 50px;
     font-weight: 700;
     color: white;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .double-sized {
@@ -136,137 +138,10 @@ body {
     background-color: rgb(255, 191, 63);
 }
 
-.bigger {
-    font-size: 37px;
-    font-weight: lighter;
-}
-
-.bi-plus-lg {
-    font-size: 30px;
-    font-weight: bold;
-}
-i{
+i {
     pointer-events: none;
 }
-span{
+
+span {
     pointer-events: none;
-}
-@media (max-width: 1350px) {
-    #calculator-container {
-        min-width: 80%;
-    }
-}
-
-@media (max-width: 1012px) {
-    #calculator-container {
-        min-width: 100%;
-    }
-}
-
-@media (max-width: 810px) {
-    #buttons-container {
-        width: 60%;
-    }
-
-    #result-screen {
-        width: 45%;
-
-    }
-
-    .btn {
-        width: 60px;
-        height: 60px;
-    }
-
-    #input-number {
-        font-size: 45px;
-    }
-
-    #result-screen {
-        margin-top: 65px;
-    }
-
-    .double-sized {
-        width: 122px;
-        height: 60px;
-        border-radius: 50px;
-    }
-}
-
-@media (max-width: 656px) {
-    #buttons-container {
-        width: 80%;
-    }
-
-    #result-screen {
-        width: 60%;
-
-    }
-
-    .btn {
-        width: 60px;
-        height: 60px;
-    }
-
-    #input-number {
-        font-size: 45px;
-    }
-
-    .double-sized {
-        width: 82px;
-        height: 40px;
-        border-radius: 50px;
-    }
-}
-
-@media (max-width: 451px) {
-    #buttons-container {
-        width: 80%;
-    }
-
-    #result-screen {
-        width: 60%;
-
-    }
-
-    .btn {
-        width: 55px;
-        height: 55px;
-    }
-
-    #input-number {
-        font-size: 35px;
-    }
-
-    .double-sized {
-        width: 82px;
-        height: 40px;
-        border-radius: 50px;
-    }
-}
-
-@media (max-width: 302px) {
-    #buttons-container {
-        width: 100%;
-    }
-
-    #result-screen {
-        width: 80%;
-
-    }
-
-    .btn {
-        width: 55px;
-        height: 55px;
-    }
-
-    #input-number {
-        font-size: 35px;
-    }
-
-    .double-sized {
-        width: 82px;
-        height: 40px;
-        border-radius: 50px;
-    }
 }
