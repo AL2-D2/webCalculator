@@ -112,27 +112,18 @@ body {
     margin-left: 30px;
 }
 
-.btn.numerical-btn:hover,
-#dot-btn:hover {
-    background-color: var(--number-hover-color);
-}
+
 
 .btn.numerical-btn:active,
 #dot-btn:active {
     background-color: rgba(188, 187, 187, 0.89);
 }
 
-.btn.misc-btn:hover {
-    background-color: var(--misc-hover-color);
-}
 
 .btn.misc-btn:active {
     background-color: rgba(255, 255, 255, 0.82);
 }
 
-.btn.operator-btn:hover {
-    background-color: var(--operator-hover-color);
-}
 
 .btn.operator-btn:active {
     background-color: rgb(255, 191, 63);
@@ -144,4 +135,20 @@ i {
 
 span {
     pointer-events: none;
+}
+
+@media (hover: hover) {
+
+    .btn.numerical-btn:hover,
+    #dot-btn:hover {
+        background-color: var(--number-hover-color);
+    }
+
+    .btn.misc-btn:hover {
+        background-color: var(--misc-hover-color);
+    }
+
+    .btn.operator-btn:hover {
+        background-color: var(--operator-hover-color);
+    }
 }
