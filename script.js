@@ -50,6 +50,19 @@ function eventOperator(e) {
     }
 }
 
+function sendValueToScreenNumber(value) {
+    checkReset();
+    resultScreenNumber.innerText += value;
+}
+
+// this function checks if result number has a 'reset' class, if so, make it disappear with the selected number ...
+function checkReset() {
+    if (resultScreenNumber.classList.contains("reset")) {
+        resultScreenNumber.innerText = null;
+        resultScreenNumber.classList.remove("reset");
+    }
+}
+
 const resultScreenNumber = document.querySelector("#input-number");
 const numericalButtons = document.querySelectorAll(".numerical-btn");
 const deleteButton = document.querySelector("#delete-btn");
@@ -72,13 +85,7 @@ let lastOperator = null;
 
 // when any of the number clicked this function updates the screenNumber...
 numericalButtons.forEach((numericalButton) => numericalButton.addEventListener("click", () => {
-    // if result number has a 'reset' class make it disappear with the selected number...
-    if (resultScreenNumber.classList.contains("reset")) {
-        resultScreenNumber.innerText = null;
-        resultScreenNumber.classList.remove("reset");
-    }
-
-    resultScreenNumber.innerText += numericalButton.innerText;
+    sendValueToScreenNumber(numericalButton.innerText);
 }));
 
 //TODO: when pressed delete button it should make the stored value change so the calculation based on the last updated values.
@@ -135,60 +142,56 @@ dotButton.addEventListener("click", () => {
 });
 
 // keyboard support
-function sendKeyboardValueToScreenNumber(keyboardCodeValue){
-    let number = null;
-    switch(keyboardCodeValue){        
-        case "Digit1":{
-            number = 1;
-            break;            
-        }
-        case "Digit2":{
-            number = 2;
+function sendKeyboardValueToScreenNumber(keyboardCodeValue) {
+    switch (keyboardCodeValue) {
+        case "Digit1": {
+            sendValueToScreenNumber(1);;
             break;
         }
-        case "Digit3":{
-            number = 3;
+        case "Digit2": {
+            sendValueToScreenNumber(2);;
             break;
         }
-        case "Digit4":{
-            number = 4;
+        case "Digit3": {
+            sendValueToScreenNumber(3);;
             break;
         }
-        case "Digit5":{
-            number = 5;
+        case "Digit4": {
+            sendValueToScreenNumber(4);;
             break;
         }
-        case "Digit6":{
-            number = 6;
+        case "Digit5": {
+            sendValueToScreenNumber(5);;
             break;
         }
-        case "Digit7":{
-            number = 7;
+        case "Digit6": {
+            sendValueToScreenNumber(6);;
             break;
         }
-        case "Digit8":{
-            number = 8;
+        case "Digit7": {
+            sendValueToScreenNumber(7);;
             break;
-        }             
-        case "Digit9":{
-            number = 9;
+        }
+        case "Digit8": {
+            sendValueToScreenNumber(8);;
             break;
-        }  
-        case "Digit0":{
-            number = 0;
+        }
+        case "Digit9": {
+            sendValueToScreenNumber(9);;
             break;
+        }
+        case "Digit0": {
+            sendValueToScreenNumber(0);
+            break;
+        }
+        case "Period":
+        case "Slash": {
+            if (!resultScreenNumber.innerText.includes(".")) {
+                sendValueToScreenNumber(".")
+            }
         }
     }
-    keyboardValueSenderToScreenNumber(number);
+
 }
 
-// later i should make this function much more general because it is basically the same function on line: 74. 
-function keyboardValueSenderToScreenNumber(number){
-    if (resultScreenNumber.classList.contains("reset")) {
-        resultScreenNumber.innerText = null;
-        resultScreenNumber.classList.remove("reset");
-    }
-
-        resultScreenNumber.innerText += number;
-}
 document.addEventListener("keydown", (e) => sendKeyboardValueToScreenNumber(e.code));
