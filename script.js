@@ -92,13 +92,7 @@ numericalButtons.forEach((numericalButton) => numericalButton.addEventListener("
 //delete the last digit on the number when clicked on the delete button.
 deleteButton.addEventListener("click", () => {
     //if its the only number on the screen make it 0 when clicked on the delete button.
-    if (resultScreenNumber.innerText.length === 1) {
-        resultScreenNumber.innerText = 0;
-        resultScreenNumber.classList.add("reset");
-    }
-    else {
-        resultScreenNumber.innerText = resultScreenNumber.innerText.substring(0, resultScreenNumber.innerText.length - 1);
-    }
+    numberDeleteEvent();
 });
 
 //clear button makes the number 0 as a reset.
@@ -140,6 +134,16 @@ dotButton.addEventListener("click", () => {
         resultScreenNumber.innerText += ".";
     }
 });
+
+function numberDeleteEvent() {
+    if (resultScreenNumber.innerText.length === 1) {
+        resultScreenNumber.innerText = 0;
+        resultScreenNumber.classList.add("reset");
+    }
+    else {
+        resultScreenNumber.innerText = resultScreenNumber.innerText.substring(0, resultScreenNumber.innerText.length - 1);
+    }
+}
 
 // keyboard support
 function sendKeyboardValueToScreenNumber(keyboardCodeValue) {
@@ -189,6 +193,9 @@ function sendKeyboardValueToScreenNumber(keyboardCodeValue) {
             if (!resultScreenNumber.innerText.includes(".")) {
                 sendValueToScreenNumber(".")
             }
+        }
+        case "Backspace": {
+            numberDeleteEvent();
         }
     }
 
