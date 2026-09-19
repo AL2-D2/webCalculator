@@ -97,12 +97,7 @@ deleteButton.addEventListener("click", () => {
 
 //clear button makes the number 0 as a reset.
 clearButton.addEventListener("click", () => {
-    resultScreenNumber.innerText = 0
-    resultScreenNumber.classList.add("reset");
-    //reset of values.
-    firstNumber = null;
-    secondNumber = null;
-    result = null;
+    clearScreenEvent();
 });
 
 addButton.addEventListener("click", (e) => {
@@ -134,6 +129,15 @@ dotButton.addEventListener("click", () => {
         resultScreenNumber.innerText += ".";
     }
 });
+
+function clearScreenEvent() {
+    resultScreenNumber.innerText = 0;
+    resultScreenNumber.classList.add("reset");
+    //reset of values.
+    firstNumber = null;
+    secondNumber = null;
+    result = null;
+}
 
 function numberDeleteEvent() {
     if (resultScreenNumber.innerText.length === 1) {
@@ -196,6 +200,9 @@ function sendKeyboardValueToScreenNumber(keyboardCodeValue) {
         }
         case "Backspace": {
             numberDeleteEvent();
+        }
+        case "KeyC": {
+            clearScreenEvent();
         }
     }
 
