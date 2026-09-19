@@ -137,13 +137,19 @@ span {
 }
 
 .tutorial-container * {
-    color: gray;
+    color: gray;    
 }
 
 .tutorial-container ul {
     list-style-position: inside;
     text-align: left;
     margin-top: 5px;
+}
+.tutorial-container h2{
+    font-size: 17px;
+}
+.tutorial-container li{
+    font-size: 15px;
 }
 
 
