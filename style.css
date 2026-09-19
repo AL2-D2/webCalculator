@@ -131,6 +131,28 @@ span {
     pointer-events: none;
 }
 
+.tutorial-container{
+    margin-top: 55px;
+    text-align: center;    
+}
+
+.tutorial-container *{        
+        color: gray;           
+}
+
+.tutorial-container ul{
+    list-style-position: inside;
+    text-align: left;
+    margin-top: 5px; 
+}
+
+
+@media (pointer:coarse) {
+    .tutorial-container{
+    display:none;  
+}
+}
+
 @media (hover: hover) {
 
     .btn.numerical-btn:hover,

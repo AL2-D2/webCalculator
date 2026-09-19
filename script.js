@@ -195,14 +195,17 @@ function sendKeyboardValueToScreenNumber(keyboardCodeValue) {
         case "Period":
         case "Slash": {
             if (!resultScreenNumber.innerText.includes(".")) {
-                sendValueToScreenNumber(".")
+                sendValueToScreenNumber(".");                
             }
+            break;
         }
         case "Backspace": {
             numberDeleteEvent();
+            break;
         }
         case "KeyC": {
             clearScreenEvent();
+            break;
         }
     }
 
