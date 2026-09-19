@@ -70,6 +70,7 @@ let result = null;
 //this is for the result button bc when clicked it must know which is the last operator and operate according to this information.
 let lastOperator = null;
 
+// when any of the number clicked this function updates the screenNumber...
 numericalButtons.forEach((numericalButton) => numericalButton.addEventListener("click", () => {
     // if result number has a 'reset' class make it disappear with the selected number...
     if (resultScreenNumber.classList.contains("reset")) {
@@ -125,10 +126,69 @@ resultButton.addEventListener("click", () => eventOperator(lastOperator));
 percentageButton.addEventListener("click", () => {
     firstNumber = resultScreenNumber.innerText;
     resultScreenNumber.innerText = round(firstNumber / 100, 6);
-})
+});
 
 dotButton.addEventListener("click", () => {
     if (!resultScreenNumber.innerText.includes(".")) {
         resultScreenNumber.innerText += ".";
     }
-})
+});
+
+// keyboard support
+function sendKeyboardValueToScreenNumber(keyboardCodeValue){
+    let number = null;
+    switch(keyboardCodeValue){        
+        case "Digit1":{
+            number = 1;
+            break;            
+        }
+        case "Digit2":{
+            number = 2;
+            break;
+        }
+        case "Digit3":{
+            number = 3;
+            break;
+        }
+        case "Digit4":{
+            number = 4;
+            break;
+        }
+        case "Digit5":{
+            number = 5;
+            break;
+        }
+        case "Digit6":{
+            number = 6;
+            break;
+        }
+        case "Digit7":{
+            number = 7;
+            break;
+        }
+        case "Digit8":{
+            number = 8;
+            break;
+        }             
+        case "Digit9":{
+            number = 9;
+            break;
+        }  
+        case "Digit0":{
+            number = 0;
+            break;
+        }
+    }
+    keyboardValueSenderToScreenNumber(number);
+}
+
+// later i should make this function much more general because it is basically the same function on line: 74. 
+function keyboardValueSenderToScreenNumber(number){
+    if (resultScreenNumber.classList.contains("reset")) {
+        resultScreenNumber.innerText = null;
+        resultScreenNumber.classList.remove("reset");
+    }
+
+        resultScreenNumber.innerText += number;
+}
+document.addEventListener("keydown", (e) => sendKeyboardValueToScreenNumber(e.code));
