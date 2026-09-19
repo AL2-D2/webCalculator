@@ -131,26 +131,26 @@ span {
     pointer-events: none;
 }
 
-.tutorial-container{
+.tutorial-container {
     margin-top: 55px;
-    text-align: center;    
+    text-align: center;
 }
 
-.tutorial-container *{        
-        color: gray;           
+.tutorial-container * {
+    color: gray;
 }
 
-.tutorial-container ul{
+.tutorial-container ul {
     list-style-position: inside;
     text-align: left;
-    margin-top: 5px; 
+    margin-top: 5px;
 }
 
 
 @media (pointer:coarse) {
-    .tutorial-container{
-    display:none;  
-}
+    .tutorial-container {
+        display: none;
+    }
 }
 
 @media (hover: hover) {

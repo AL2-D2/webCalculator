@@ -195,7 +195,7 @@ function sendKeyboardValueToScreenNumber(keyboardCodeValue) {
         case "Period":
         case "Slash": {
             if (!resultScreenNumber.innerText.includes(".")) {
-                sendValueToScreenNumber(".");                
+                sendValueToScreenNumber(".");
             }
             break;
         }
